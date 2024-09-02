@@ -19,4 +19,11 @@ def test_func(sorting_func, n_array_length, repeat=5, number=1e6):
     res = min(exec_res) / number * 1000
 
     return res
-    
+
+
+def check_sorting(sorting_func, n_array_length=10, min_elem=0, max_elem=100):
+    test_arr = [random.randint(min_elem, max_elem+1) for i in range(n_array_length)]
+    print(f"Test case:   {test_arr}")
+    sorting_func(test_arr)
+    print(f"Test result: {test_arr}")
+    print(f"Sorted correctly: {test_arr == sorted(test_arr)}")
